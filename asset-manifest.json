@@ -1,13 +1,13 @@
 {
   "main.css": "/quest-frontend/static/css/main.6c6d4447.chunk.css",
-  "main.js": "/quest-frontend/static/js/main.f5fb83ec.chunk.js",
-  "main.js.map": "/quest-frontend/static/js/main.f5fb83ec.chunk.js.map",
+  "main.js": "/quest-frontend/static/js/main.f2ae63b9.chunk.js",
+  "main.js.map": "/quest-frontend/static/js/main.f2ae63b9.chunk.js.map",
   "runtime~main.js": "/quest-frontend/static/js/runtime~main.c706aaa6.js",
   "runtime~main.js.map": "/quest-frontend/static/js/runtime~main.c706aaa6.js.map",
-  "static/js/2.29fb15e3.chunk.js": "/quest-frontend/static/js/2.29fb15e3.chunk.js",
-  "static/js/2.29fb15e3.chunk.js.map": "/quest-frontend/static/js/2.29fb15e3.chunk.js.map",
+  "static/js/2.b52c7c90.chunk.js": "/quest-frontend/static/js/2.b52c7c90.chunk.js",
+  "static/js/2.b52c7c90.chunk.js.map": "/quest-frontend/static/js/2.b52c7c90.chunk.js.map",
   "index.html": "/quest-frontend/index.html",
-  "precache-manifest.62e4740ec31a4904c4132e62fb4715ff.js": "/quest-frontend/precache-manifest.62e4740ec31a4904c4132e62fb4715ff.js",
+  "precache-manifest.4b6cda3969590200dca76776c21bfe9c.js": "/quest-frontend/precache-manifest.4b6cda3969590200dca76776c21bfe9c.js",
   "service-worker.js": "/quest-frontend/service-worker.js",
   "static/css/main.6c6d4447.chunk.css.map": "/quest-frontend/static/css/main.6c6d4447.chunk.css.map",
   "static/media/logo.svg": "/quest-frontend/static/media/logo.5d5d9eef.svg"
