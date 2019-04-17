@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/quest-frontend/static/media/logo.5d5d9eef.svg"
   },
   {
-    "revision": "0a059cbab62b23b1e98adc47110bf766",
+    "revision": "930621f1af3eb1c0bf5fd072eae113de",
     "url": "/quest-frontend/index.html"
   }
 ];
