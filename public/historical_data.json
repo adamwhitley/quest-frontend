@@ -1,0 +1,377 @@
+[
+  {
+    "name": "oil",
+    "values": [
+      {
+        "date": "4/22/2019",
+        "production": 253
+      },
+      {
+        "date": "4/21/2019",
+        "production": 2000
+      },
+      {
+        "date": "4/20/2019",
+        "production": 1661
+      },
+      {
+        "date": "4/19/2019",
+        "production": 2105
+      },
+      {
+        "date": "4/18/2019",
+        "production": 1673
+      },
+      {
+        "date": "4/17/2019",
+        "production": 2354
+      },
+      {
+        "date": "4/16/2019",
+        "production": 1653
+      },
+      {
+        "date": "4/15/2019",
+        "production": 0
+      },
+      {
+        "date": "4/14/2019",
+        "production": 0
+      },
+      {
+        "date": "4/13/2019",
+        "production": 0
+      },
+      {
+        "date": "4/12/2019",
+        "production": 270
+      },
+      {
+        "date": "4/11/2019",
+        "production": 1189
+      },
+      {
+        "date": "4/10/2019",
+        "production": 735
+      },
+      {
+        "date": "4/9/2019",
+        "production": 628
+      },
+      {
+        "date": "4/8/2019",
+        "production": 1047
+      },
+      {
+        "date": "4/7/2019",
+        "production": 876
+      },
+      {
+        "date": "4/6/2019",
+        "production": 690
+      },
+      {
+        "date": "4/5/2019",
+        "production": 1134
+      },
+      {
+        "date": "4/4/2019",
+        "production": 896
+      },
+      {
+        "date": "4/3/2019",
+        "production": 1106
+      },
+      {
+        "date": "4/2/2019",
+        "production": 726
+      },
+      {
+        "date": "4/1/2019",
+        "production": 836
+      },
+      {
+        "date": "3/30/2019",
+        "production": 514
+      },
+      {
+        "date": "3/29/2019",
+        "production": 1105
+      },
+      {
+        "date": "3/28/2019",
+        "production": 1044
+      },
+      {
+        "date": "3/27/2019",
+        "production": 942
+      },
+      {
+        "date": "3/26/2019",
+        "production": 1219
+      },
+      {
+        "date": "3/25/2019",
+        "production": 984
+      },
+      {
+        "date": "3/24/2019",
+        "production": 1332
+      },
+      {
+        "date": "3/23/2019",
+        "production": 916
+      }
+    ]
+  },
+  {
+    "name": "water",
+    "values": [
+      {
+        "date": "4/22/2019",
+        "production": 255
+      },
+      {
+        "date": "4/21/2019",
+        "production": 1235
+      },
+      {
+        "date": "4/20/2019",
+        "production": 2087
+      },
+      {
+        "date": "4/19/2019",
+        "production": 2187
+      },
+      {
+        "date": "4/18/2019",
+        "production": 1397
+      },
+      {
+        "date": "4/17/2019",
+        "production": 1166
+      },
+      {
+        "date": "4/16/2019",
+        "production": 2123
+      },
+      {
+        "date": "4/15/2019",
+        "production": 0
+      },
+      {
+        "date": "4/14/2019",
+        "production": 0
+      },
+      {
+        "date": "4/13/2019",
+        "production": 0
+      },
+      {
+        "date": "4/12/2019",
+        "production": 259
+      },
+      {
+        "date": "4/11/2019",
+        "production": 966
+      },
+      {
+        "date": "4/10/2019",
+        "production": 873
+      },
+      {
+        "date": "4/9/2019",
+        "production": 560
+      },
+      {
+        "date": "4/8/2019",
+        "production": 1121
+      },
+      {
+        "date": "4/7/2019",
+        "production": 1178
+      },
+      {
+        "date": "4/6/2019",
+        "production": 776
+      },
+      {
+        "date": "4/5/2019",
+        "production": 963
+      },
+      {
+        "date": "4/4/2019",
+        "production": 1151
+      },
+      {
+        "date": "4/3/2019",
+        "production": 1085
+      },
+      {
+        "date": "4/2/2019",
+        "production": 866
+      },
+      {
+        "date": "4/1/2019",
+        "production": 937
+      },
+      {
+        "date": "3/30/2019",
+        "production": 835
+      },
+      {
+        "date": "3/29/2019",
+        "production": 1149
+      },
+      {
+        "date": "3/28/2019",
+        "production": 1257
+      },
+      {
+        "date": "3/27/2019",
+        "production": 962
+      },
+      {
+        "date": "3/26/2019",
+        "production": 1172
+      },
+      {
+        "date": "3/25/2019",
+        "production": 824
+      },
+      {
+        "date": "3/24/2019",
+        "production": 1087
+      },
+      {
+        "date": "3/23/2019",
+        "production": 709
+      }
+    ]
+  },
+  {
+    "name": "gas",
+    "values": [
+      {
+        "date": "4/22/2019",
+        "production": 1253
+      },
+      {
+        "date": "4/21/2019",
+        "production": 1000
+      },
+      {
+        "date": "4/20/2019",
+        "production": 661
+      },
+      {
+        "date": "4/19/2019",
+        "production": 1105
+      },
+      {
+        "date": "4/18/2019",
+        "production": 2673
+      },
+      {
+        "date": "4/17/2019",
+        "production": 1354
+      },
+      {
+        "date": "4/16/2019",
+        "production": 653
+      },
+      {
+        "date": "4/15/2019",
+        "production": 0
+      },
+      {
+        "date": "4/14/2019",
+        "production": 0
+      },
+      {
+        "date": "4/13/2019",
+        "production": 0
+      },
+      {
+        "date": "4/12/2019",
+        "production": 570
+      },
+      {
+        "date": "4/11/2019",
+        "production": 1689
+      },
+      {
+        "date": "4/10/2019",
+        "production": 1735
+      },
+      {
+        "date": "4/9/2019",
+        "production": 1028
+      },
+      {
+        "date": "4/8/2019",
+        "production": 847
+      },
+      {
+        "date": "4/7/2019",
+        "production": 1276
+      },
+      {
+        "date": "4/6/2019",
+        "production": 2190
+      },
+      {
+        "date": "4/5/2019",
+        "production": 1334
+      },
+      {
+        "date": "4/4/2019",
+        "production": 1196
+      },
+      {
+        "date": "4/3/2019",
+        "production": 806
+      },
+      {
+        "date": "4/2/2019",
+        "production": 1726
+      },
+      {
+        "date": "4/1/2019",
+        "production": 1836
+      },
+      {
+        "date": "3/30/2019",
+        "production": 1514
+      },
+      {
+        "date": "3/29/2019",
+        "production": 705
+      },
+      {
+        "date": "3/28/2019",
+        "production": 1644
+      },
+      {
+        "date": "3/27/2019",
+        "production": 1242
+      },
+      {
+        "date": "3/26/2019",
+        "production": 919
+      },
+      {
+        "date": "3/25/2019",
+        "production": 984
+      },
+      {
+        "date": "3/24/2019",
+        "production": 2032
+      },
+      {
+        "date": "3/23/2019",
+        "production": 1916
+      }
+    ]
+  }
+]

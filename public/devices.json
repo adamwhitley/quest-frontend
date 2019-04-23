@@ -1,0 +1,23 @@
+{
+  "devices": [
+    {
+      "status": "Online",
+      "id": 25412589665,
+      "lat": "36.7619",
+      "lng": "-95.5",
+      "last_reading": "4/11/2019 10:33:19",
+      "oil_level": 28,
+      "water_level": 12,
+      "total_volume": 55
+    },
+    {
+      "status": "Offline",
+      "id": 3247898744,
+      "lat": "36.7769",
+      "lng": "-95.4750",
+      "last_reading": "4/11/2019 10:27:19",
+      "oil_level": 16,
+      "water_level": 3,
+      "total_volume": 55
+    }
+  ]}

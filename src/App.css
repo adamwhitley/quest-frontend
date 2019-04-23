@@ -1,23 +1,376 @@
+/* Fonts */
+@font-face {
+  font-family: 'TacticBold';
+  src: url('./fonts/tacticsans-bld-webfont.woff2') format('woff2'),
+  url('./fonts/tacticsans-bld-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TacticLight';
+  src: url('./fonts/tacticsans-lgt-webfont.woff2') format('woff2'),
+  url('./fonts/tacticsans-lgt-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Tactic';
+  src: url('./fonts/tacticsans-med-webfont.woff2') format('woff2'),
+  url('./fonts/tacticsans-med-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica', 'Verdana', sans-serif;
+  color: #58585A;
+}
+
+header *:focus {
+  outline: none;
+}
+
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App header {
+  position: relative;
+  z-index: 5;
+  height: 110px;
+  padding-bottom: 10px;
+}
+.App header svg {
+  width: 200px;
+  height: auto;
+  transform: matrix(1.3333333,0,0,-1.3333333,0,112.24);
+  position: absolute;
+  top: -80px;
+  left: 50px;
+}
+.App header svg path {
+  fill: #58585a;
+  transition: fill .5s ease-in-out;
+}
+.App header svg path#path24,
+.App header svg path#path26,
+.App header svg path#path28,
+.App header svg path#path30,
+.App header svg path#path32,
+.App header svg path#path34,
+.App header svg path#path36,
+.App header svg path#path38,
+.App header svg path#path40,
+.App header svg path#path42,
+.App header svg path#path44,
+.App header svg path#path46,
+.App header svg path#path48,
+.App header svg path#path50,
+.App header svg path#path52,
+.App header svg path#path54,
+.App header svg path#path56,
+.App header svg path#path58,
+.App header svg path#path60,
+.App header svg path#path62,
+.App header svg path#path64,
+.App header svg path#path66,
+.App header svg path#path68,
+.App header svg path#path70,
+.App header svg path#path72,
+.App header svg path#path74,
+.App header svg path#path76,
+.App header svg path#path78 {
+  fill: #168CCF;
+  transition: fill .5s ease-in-out;
+}
+.App header svg.active g > path {
+  fill: #ffffff !important;
+  transition: fill .5s ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+nav {
+  font-family: 'Tactic', 'Helvetica', 'Verdana', sans-serif;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -400px;
+  background: #58585a;
   color: white;
+  padding: 100px 0 20px;
+  width: 395px;
+  text-align: left;
+  box-shadow: -20px 0 20px -10px #444 inset;
+  transition: left .5s ease-in-out;
+  z-index: 4;
+}
+nav h1 {
+  background: #666;
+  padding: 10px 15px;
+  font-weight: normal;
+}
+nav ul {
+  list-style: none;
+}
+nav ul.regions {
+  font-size: 1.2rem;
+}
+nav ul.regions > li {
+  margin-bottom: 10px;
+}
+nav ul.regions span {
+  color: #FECA32;
+}
+nav ul.sites {
+  font-family: 'TacticLight', 'Helvetica', 'Verdana', sans-serif;
+  font-size: 1rem;
+}
+nav ul.sites li a {
+  color: #168CCF;
+}
+nav ul.sites li a:hover {
+  color: #FFF;
+  transition: color .5s ease-in-out;
+}
+nav.active { left: 0; }
+nav ul li a {
+  color: white;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+/* Home */
+.line {
+  stroke-width: 2;
+  fill: none;
+}
+.axis path {
+  stroke: black;
+}
+.text {
+  font-size: 12px;
+}
+.title-text {
+  font-size: 12px;
+}
+.Home #chart {
+  background: #f9f9f9;
+  box-shadow: 0 33px 28px -36px #000;
+  margin-bottom: 10px;
+}
+.Home .prodColumn {
+  float: left;
+  padding: 0 10px;
+  width: calc(33.3333% - 20px);
+}
+.Home .prodColumn h3 {
+  font-family: 'Tactic', 'Helvetica', 'Verdana', sans-serif;
+  border-bottom: 1px solid #168CCF;
+  text-align: left;
+  padding: 5px 10px;
+  width: calc(100% - 10px);
+  text-transform: capitalize;
+}
+.Home .prodColumn .row {
+  overflow: hidden;
+  padding: 5px 0;
+}
+.Home .prodColumn .row:nth-child(even) {
+  background: #efefef;
+}
+.Home .prodColumn .row .date {
+  width: 50%;
+  float: left;
+}
+.Home .prodColumn .row .prod {
+  width: 50%;
+  float: right;
+  font-weight: bold;
+}
+
+/* MENU ICON */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 1.5s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+  position: absolute;
+  top: 40px;
+  left: 250px;
+  transition: left .5s ease-in-out;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+.hamburger.active:hover {
+  opacity: 0.7;
+}
+.hamburger.active .hamburger-inner,
+.hamburger.active .hamburger-inner::before,
+.hamburger.active .hamburger-inner::after {
+  background-color: #58585A;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+  transition-duration: 0.075s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -10px;
+  transition: top 0.5s 0.5s ease, opacity 0.5s ease;
+}
+.hamburger-inner::after {
+  bottom: -10px;
+  transition: bottom 0.5s 0.5s ease, transform 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger.active {
+  left: 300px;
+}
+.hamburger.active .hamburger-inner {
+  transform: rotate(45deg);
+  transition-delay: 0.5s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  background-color: #ffffff;
+}
+.hamburger.active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.5s ease, opacity 0.5s 0.5s ease, background-color .5s ease-in-out;
+  background-color: #ffffff;
+}
+.hamburger.active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.5s ease, transform 0.5s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), background-color .5s ease-in-out;
+  background-color: #ffffff;
+}
+
+/* Site */
+.siteBar {
+  font-family: 'Tactic', 'Helvetica', 'Verdana', sans-serif;
+  font-size: .8rem;
+  background: #168CCF;
+  color: white;
+  text-align: left;
+  padding: 5px 10px;
+}
+
+/* Map */
+.Map {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  box-shadow: 0 33px 28px -36px #000;
+}
+.MapDevice svg {
+  cursor: pointer;
+}
+.MapDevice svg.Online path {
+  fill: green;
+}
+.MapDevice svg.Offline path {
+  fill: red;
+}
+.pop {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 3;
+}
+.pop.active { display: block; }
+.pop button {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  border: 0;
+  background: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.popContainer {
+  width: 35%;
+  margin: 5% auto 0;
+  background: white;
+  border: 1px solid black;
+}
+.popContainer h3 {
+  background: #168CCF;
+  color: white;
+  margin: 0;
+  padding: 5px 10px;
+  text-align: left;
+}
+.popContainer > b {
+  color: white;
+  display: block;
+  padding: 5px 10px;
+}
+.popContainer > b.Offline {
+  background: red;
+}
+.popContainer > b.Online {
+  background: green;
+}
+.popContainer #chart {
+  height: 140px;
+  overflow: hidden;
+  padding-top: 10px;
+}
+.popContainer #chart .name-text {
+  font-weight: bold;
+}
+.popContainer .values {overflow: hidden}
+.popContainer .values > div {
+  width: 33.333%;
+  padding: 10px 0;
+  float: left;
+}
+.popContainer .values > div h4 {
+  margin: 0 0 10px 0;
+}
+.popContainer .values .water {
+  background: #3ec9ef;
+}
+.popContainer .values .oil {
+  background: #c9b00c;
+}
+.popContainer .values .available {
+  background: #cccccc;
 }
