@@ -1,14 +1,65 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes, faCheck } from '@fortawesome/free-solid-svg-icons'
 import Map from './Map.js';
 
 class Site extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            devices: []
+        };
+    }
+
+    componentWillMount() {
+        fetch('http://ec2-3-93-75-138.compute-1.amazonaws.com/api/v1/devices?siteId=1')
+            .then(rsp => rsp.json())
+            .then(data => this.setState({ devices: data }));
+    }
+
   render() {
+    if(this.state.devices.length < 1) {
+        return true;
+    }
     return (
       <div className="Site">
         <div className="siteBar">
-            Northeast > Site One
+            region 01 c01 > site 01 r01
         </div>
-        <Map />
+        <Map data={this.state.devices} />
+        <div className="content">
+            <div className="prodColumn">
+                <h3>Devices</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Status</th>
+                            <th>Name</th>
+                            <th>Device ID</th>
+                            <th>Location</th>
+                            <th>Connected</th>
+                            <th>Operational</th>
+                            <th>Mapped</th>
+                        </tr>
+                        {
+                            this.state.devices.map((item, i) => {
+                                return(
+                                    <tr key={i}>
+                                        <td className="center">{item.state === 1 ? <span className="online" /> : <span className="offline" /> }</td>
+                                        <td>{item.name}</td>
+                                        <td>{item.id}</td>
+                                        <td>{JSON.parse(item.infoRaw).location.type.GPS.latitude},{JSON.parse(item.infoRaw).location.type.GPS.longitude}</td>
+                                        <td className="center">{item.connectionState === 1 ? <FontAwesomeIcon icon={faCheck} /> : <FontAwesomeIcon icon={faTimes} />}</td>
+                                        <td className="center">{item.operationalState === 1 ? <FontAwesomeIcon icon={faCheck} /> : <FontAwesomeIcon icon={faTimes} />}</td>
+                                        <td className="center">{item.mapped === true ? <FontAwesomeIcon icon={faCheck} /> : <FontAwesomeIcon icon={faTimes} />}</td>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
       </div>
     );
   }

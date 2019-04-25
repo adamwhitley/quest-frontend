@@ -17,9 +17,15 @@ class Home extends Component {
   }
 
   generateChart = () => {
+      let height = 300;
+      if (window.innerWidth < 500) {
+          height = 150;
+      }
+      else {
+          height = 300;
+      }
     let data = this.state.data,
         width = window.innerWidth - 50,
-        height = 300,
         margin = 50,
         duration = 250,
         lineOpacity = "0.25",
@@ -50,7 +56,7 @@ class Home extends Component {
         .domain([0, d3.max(data[0].values, d => d.production)])
         .range([height-margin, 0]);
 
-    let color = d3.scaleOrdinal(d3.schemeCategory10);
+    let color = d3.scaleOrdinal().range(["#c9b00c", "#3ec9ef", "#02f948"]);
 
     /* Add SVG */
     let svg = d3.select("#chart").append("svg")

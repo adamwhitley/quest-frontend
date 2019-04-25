@@ -137,6 +137,23 @@ nav ul li a {
   color: white;
   text-decoration: none;
 }
+nav .userNav {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+nav .userNav button {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  color: white;
+  padding: 10px;
+}
+nav .userNav button:hover {
+  color: #FECA32;
+  transition: color .5s ease-in-out;
+}
 
 /* Home */
 .line {
@@ -167,7 +184,7 @@ nav ul li a {
   border-bottom: 1px solid #168CCF;
   text-align: left;
   padding: 5px 10px;
-  width: calc(100% - 10px);
+  width: calc(100% - 20px);
   text-transform: capitalize;
 }
 .Home .prodColumn .row {
@@ -185,6 +202,56 @@ nav ul li a {
   width: 50%;
   float: right;
   font-weight: bold;
+}
+
+/* Devices Page */
+.Site .prodColumn {
+  float: left;
+  padding: 0 10px;
+  width: calc(100% - 20px);
+}
+.Site .prodColumn h3 {
+  font-family: 'Tactic', 'Helvetica', 'Verdana', sans-serif;
+  border-bottom: 1px solid #168CCF;
+  text-align: left;
+  padding: 5px 10px;
+  width: calc(100% - 20px);
+  text-transform: capitalize;
+}
+.Site .prodColumn table {
+  border: 0;
+  width: 100%;
+}
+.Site .prodColumn th {
+    background: #168CCF;
+    color: white;
+    font-weight: normal;
+    padding: 5px 0;
+}
+.Site .prodColumn tr:nth-child(even) {
+  background: #efefef;
+}
+.Site .prodColumn td {
+    padding: 5px 10px;
+}
+.Site .prodColumn td.center {
+    text-align: center;
+}
+.Site .prodColumn td span.offline {
+    display: block;
+    background: red;
+    border-radius: 100px;
+    height: 15px;
+    width: 15px;
+    margin: auto;
+}
+.Site .prodColumn td span.online {
+    display: block;
+    background: lightgreen;
+    border-radius: 100px;
+    height: 15px;
+    width: 15px;
+    margin: auto;
 }
 
 /* MENU ICON */
@@ -356,7 +423,10 @@ nav ul li a {
 .popContainer #chart .name-text {
   font-weight: bold;
 }
-.popContainer .values {overflow: hidden}
+.popContainer .values {
+    overflow: hidden;
+    text-align: center;
+}
 .popContainer .values > div {
   width: 33.333%;
   padding: 10px 0;
@@ -373,4 +443,15 @@ nav ul li a {
 }
 .popContainer .values .available {
   background: #cccccc;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 500px) {
+  .Home .prodColumn {
+    float: none;
+    width: calc(100% - 20px);
+  }
+  .popContainer {width: 65%;}
+  .popContainer #chart {height: 85px;}
 }

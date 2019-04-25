@@ -9,7 +9,7 @@ class Map extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            devices: this.props.data,
+            devices: [],
             center: {
                 lat: 40.7484, // Center on Site coords
                 lng: -73.9845
@@ -21,13 +21,19 @@ class Map extends Component {
         this.getPop = this.getPop.bind(this);
     }
 
+    componentWillMount() {
+        fetch('/devices.json')
+            .then(rsp => rsp.json())
+            .then(data => this.setState({ devices: data.devices }));
+    }
+
     getPop = (item) => {
         this.setState({ popItem: item, pop: true });
         d3.select("#chart svg").remove();
-        let remainder = 55 - (24 + 12);
+        let remainder = item.total_volume - (item.oil_level + item.water_level);
         let data = [
-            {name: "Water", value: 12},
-            {name: "Oil", value: 24},
+            {name: "Water", value: item.water_level},
+            {name: "Oil", value: item.oil_level},
             {name: "Available", value: remainder}
         ],
             text = "";
@@ -120,26 +126,21 @@ class Map extends Component {
                   <FontAwesomeIcon icon={faTimes} />
               </button>
               <div className="popContainer">
-                  <h3>{this.state.popItem.name}</h3>
-                  <b className={this.state.popItem.state === 1 ? 'Online' : 'Offline'}>
-                      Status: {this.state.popItem.state === 1 ? 'Online' : 'Offline'}
-                  </b>
+                  <h3>{this.state.popItem.id}</h3>
+                  <b className={this.state.popItem.status}>Status: {this.state.popItem.status}</b>
                   <div id="chart" />
                   <div className="values">
                       <div className="water">
                           <h4>Water</h4>
-                          {/*{this.state.popItem.water_level}*/}
-                          12
+                          {this.state.popItem.water_level}
                       </div>
                       <div className="oil">
                           <h4>Oil</h4>
-                          {/*{this.state.popItem.oil_level}*/}
-                          24
+                          {this.state.popItem.oil_level}
                       </div>
                       <div className="available">
                           <h4>Available</h4>
-                          {/*{this.state.popItem.total_volume - (this.state.popItem.water_level + this.state.popItem.oil_level)}*/}
-                          19
+                          {this.state.popItem.total_volume - (this.state.popItem.water_level + this.state.popItem.oil_level)}
                       </div>
                   </div>
               </div>
@@ -151,8 +152,8 @@ class Map extends Component {
           >
           {
               this.state.devices.map((item, i) => <MapDevice
-                  lat={JSON.parse(item.infoRaw).location.type.GPS.latitude}
-                  lng={JSON.parse(item.infoRaw).location.type.GPS.longitude}
+                  lat={item.lat}
+                  lng={item.lng}
                   pop={this.getPop}
                   props={item}
                   key={i} />)
