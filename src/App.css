@@ -231,6 +231,9 @@ nav .userNav button:hover {
 .Site .prodColumn tr:nth-child(even) {
   background: #efefef;
 }
+.Site .prodColumn tr {
+    cursor: pointer;
+}
 .Site .prodColumn td {
     padding: 5px 10px;
 }
@@ -252,6 +255,55 @@ nav .userNav button:hover {
     height: 15px;
     width: 15px;
     margin: auto;
+}
+.Site .details {
+    background: #168CCF;
+    color: white;
+    position: relative;
+    padding: 10px;
+    display: none;
+}
+.Site .details.active {
+    display: block;
+    transition: display .5s ease-in-out;
+}
+.Site .details h3 {
+    font-family: 'Tactic', 'Helvetica', 'Verdana', sans-serif;
+    border-bottom: 1px solid white;
+    margin: 0;
+    text-align: left;
+    padding: 10px;
+    width: calc(100% - 20px);
+    text-transform: capitalize;
+}
+.Site .details button {
+    background: transparent;
+    border: 0;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.Site .details table {
+    border: 0;
+    width: 100%;
+}
+.Site .details th {
+    background: #168CCF;
+    color: white;
+    font-weight: normal;
+    padding: 5px 0;
+}
+.Site .details tr:nth-child(even) {
+    background: #1e96db;
+}
+.Site .details td {
+    padding: 5px 10px;
+}
+.Site .details td.center {
+    text-align: center;
 }
 
 /* MENU ICON */

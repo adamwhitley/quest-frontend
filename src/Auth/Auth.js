@@ -10,6 +10,7 @@ export default class Auth {
         domain: 'quest-automated.auth0.com',
         clientID: 'YAy4BE3v7ZcgRx3ymwf9f7Eexorlvdu9',
         redirectUri: 'http://localhost:3000/callback',
+        // redirectUri: 'http://quest-frontend.s3-website-us-east-1.amazonaws.com/callback',
         responseType: 'token id_token',
         scope: 'openid'
     });
