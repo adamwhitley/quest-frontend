@@ -43,14 +43,14 @@ class App extends Component {
     }
 
     componentDidMount() {
-        const { renewSession } = this.props.auth;
+        // const { renewSession } = this.props.auth;
 
-        if (localStorage.getItem('isLoggedIn') === 'true') {
-            renewSession();
-        }
-        else {
-            this.login();
-        }
+        // if (localStorage.getItem('isLoggedIn') === 'true') {
+        //     renewSession();
+        // }
+        // else {
+        //     this.login();
+        // }
     }
 
     render() {
@@ -196,33 +196,45 @@ class App extends Component {
                     </button>
                 </header>
                 <nav className={this.state.openMenu ? 'active' : ''}>
-                    <h1>{this.state.companyData.name}</h1>
+                    <h1>Tulsa Oil Company</h1>
+                    {/*<h1>{this.state.companyData.name}</h1>*/}
+                    {/*<ul className="regions">*/}
+                        {/*{*/}
+                            {/*this.state.companyData.regions &&*/}
+                            {/*this.state.companyData.regions.map((item, i) => {*/}
+                                {/*return (<li key={i}><a href="/"><span>0{i + 1}</span>{item.name}</a>*/}
+                                    {/*<ul className="sites">*/}
+                                        {/*{*/}
+                                            {/*item.sites && item.sites.map((item, i) => {*/}
+                                                {/*return (<li key={i}><a href="/site">{item.name}*/}
+                                                    {/*{*/}
+                                                        {/*(item.warncounter > 0 ?*/}
+                                                            {/*<span*/}
+                                                                {/*className="warnings">{item.warncounter}</span> : null)*/}
+                                                    {/*}*/}
+                                                    {/*{*/}
+                                                        {/*(item.errcounter > 0 ?*/}
+                                                            {/*<span*/}
+                                                                {/*className="errors">{item.errcounter}</span> : null)*/}
+                                                    {/*}*/}
+                                                {/*</a></li>)*/}
+                                            {/*})*/}
+                                        {/*}*/}
+                                    {/*</ul>*/}
+                                {/*</li>)*/}
+                            {/*})*/}
+                        {/*}*/}
+                    {/*</ul>*/}
                     <ul className="regions">
-                        {
-                            this.state.companyData.regions &&
-                            this.state.companyData.regions.map((item, i) => {
-                                return (<li key={i}><a href="/"><span>0{i + 1}</span>{item.name}</a>
-                                    <ul className="sites">
-                                        {
-                                            item.sites && item.sites.map((item, i) => {
-                                                return (<li key={i}><a href="/site">{item.name}
-                                                    {
-                                                        (item.warncounter > 0 ?
-                                                            <span
-                                                                className="warnings">{item.warncounter}</span> : null)
-                                                    }
-                                                    {
-                                                        (item.errcounter > 0 ?
-                                                            <span
-                                                                className="errors">{item.errcounter}</span> : null)
-                                                    }
-                                                </a></li>)
-                                            })
-                                        }
+                        <li><a href="/"><span>01</span>Northeast</a>
+                            <ul className="sites">
+                                <li><a href="/site">Site One</a>
+                                    <ul className="devices">
+                                        <li><a href="/site">Tank Stick One</a></li>
                                     </ul>
-                                </li>)
-                            })
-                        }
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                     <div className="userNav">
                         <button

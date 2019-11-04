@@ -32,6 +32,9 @@ header *:focus {
   outline: none;
 }
 
+.hide { display: none; }
+button { cursor: pointer; }
+
 .App {
   text-align: center;
 }
@@ -89,6 +92,30 @@ header *:focus {
   transition: fill .5s ease-in-out;
 }
 
+.alert {
+    background: red;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    padding: 5px 10px 5px 75px;
+    font-weight: bold;
+    display: none;
+}
+.alert.active { display: block; }
+.alert .alertIcon {
+    font-size: 2rem;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+}
+.alert .angle {
+    font-size: 4.5rem;
+    position: absolute;
+    top: -22px;
+    left: 35px;
+}
+
 nav {
   font-family: 'Tactic', 'Helvetica', 'Verdana', sans-serif;
   position: fixed;
@@ -131,6 +158,9 @@ nav ul.sites li a {
 nav ul.sites li a:hover {
   color: #FFF;
   transition: color .5s ease-in-out;
+}
+nav ul.devices li a {
+    color: #FECA32;
 }
 nav.active { left: 0; }
 nav ul li a {
@@ -231,7 +261,13 @@ nav .userNav button:hover {
 .Site .prodColumn tr:nth-child(even) {
   background: #efefef;
 }
-.Site .prodColumn tr {
+.Site .prodColumn tr:hover {
+  background: #FECA32;
+  transition: background 1s ease-in-out;
+  cursor: pointer;
+}
+.Site .prodColumn tr,
+.Site .prodColumn tr > * {
     cursor: pointer;
 }
 .Site .prodColumn td {
@@ -240,7 +276,13 @@ nav .userNav button:hover {
 .Site .prodColumn td.center {
     text-align: center;
 }
-.Site .prodColumn td span.offline {
+.Site .prodColumn td button {
+    border: 0;
+    background: transparent;
+    font-size: 1.1rem;
+}
+.Site .prodColumn td span.red,
+.Site .details td span.offline {
     display: block;
     background: red;
     border-radius: 100px;
@@ -248,7 +290,8 @@ nav .userNav button:hover {
     width: 15px;
     margin: auto;
 }
-.Site .prodColumn td span.online {
+.Site .prodColumn td span.green,
+.Site .details td span.online {
     display: block;
     background: lightgreen;
     border-radius: 100px;
@@ -256,12 +299,31 @@ nav .userNav button:hover {
     width: 15px;
     margin: auto;
 }
+.Site .prodColumn td span.yellow {
+    display: block;
+    background: yellow;
+    border-radius: 100px;
+    height: 15px;
+    width: 15px;
+    margin: auto;
+}
 .Site .details {
-    background: #168CCF;
+    background: rgba(0, 0, 0, 0.7);
     color: white;
-    position: relative;
-    padding: 10px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 25vh;
+    z-index: 6;
     display: none;
+}
+.Site .details .detailsContent {
+    background: white;
+    padding: 10px;
+    width: 80%;
+    margin: auto;
 }
 .Site .details.active {
     display: block;
@@ -269,7 +331,8 @@ nav .userNav button:hover {
 }
 .Site .details h3 {
     font-family: 'Tactic', 'Helvetica', 'Verdana', sans-serif;
-    border-bottom: 1px solid white;
+    color: #168CCF;
+    border-bottom: 1px solid #168CCF;
     margin: 0;
     text-align: left;
     padding: 10px;
@@ -299,12 +362,148 @@ nav .userNav button:hover {
 .Site .details tr:nth-child(even) {
     background: #1e96db;
 }
+.Site .details tr:nth-child(odd) {
+    background: #168CCF;
+}
 .Site .details td {
     padding: 5px 10px;
 }
 .Site .details td.center {
     text-align: center;
 }
+.Site .move {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 6;
+    display: none;
+}
+.Site .move.active { display: block; }
+.Site .move > button {
+    background: transparent;
+    border: 0;
+    color:white;
+    position: absolute;
+    top: 10px;
+    right:10px;
+    font-size: 2rem;
+}
+.Site .move .moveModal {
+    background: white;
+    margin: 20% auto 0;
+    width: 70%;
+    padding: 15px 20px;
+    overflow: hidden;
+}
+.Site .move .moveModal h3 {
+    font-family: 'Tactic', 'Helvetica', 'Verdana', sans-serif;
+    border-bottom: 1px solid #168CCF;
+    text-align: left;
+    padding: 0 10px;
+    width: calc(100% - 20px);
+    text-transform: capitalize;
+}
+.Site .move .moveModal input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+.Site .move .moveModal button {
+    margin: 0 10px;
+    border: 0;
+    background: #FECA32;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 3px;
+}
+.Site .move .moveModal button.submit {
+    float: right;
+    margin-top: 10px;
+    border: 0;
+    background: #FECA32;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+
+/* SETUP PAGE */
+.Setup {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #168CCF;
+    z-index: 6;
+    color: white;
+    text-align: center;
+    padding-top: 30vh;
+}
+.Setup h1 {
+    font-family: 'Tactic', 'Helvetica', 'Verdana', sans-serif;
+    font-size: 2.5rem;
+}
+.Setup svg {
+    font-size: 2.5rem;
+    animation: spin 2s infinite linear;
+}
+.Setup svg path {
+    fill: #FECA32;
+}
+
+.Setup .spinnerHolder {
+    position: relative;
+    margin: auto;
+    height: 65px;
+    width: 65px;
+}
+.Setup .spinner {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border-right: 4px solid #FECA32;
+    border-top: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    animation: spin 2s infinite linear;
+}
+.Setup .spinner:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border-top: 4px solid white;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    top: -4px;
+    left: -4px;
+    animation: spin 2s infinite linear;
+}
+.Setup .spinner:before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border-top: 4px solid white;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    top: -4px;
+    left: -4px;
+    animation: spin 3s infinite linear;
+}
+
 
 /* MENU ICON */
 .hamburger {
@@ -405,6 +604,18 @@ nav .userNav button:hover {
   text-align: left;
   padding: 5px 10px;
 }
+.siteBar button {
+    float: right;
+    border: 0;
+    background: transparent;
+}
+.siteBar button svg {
+    font-size: 1.1rem;
+    margin-top: -4px;
+}
+.siteBar button svg path {
+    fill: white;
+}
 
 /* Map */
 .Map {
@@ -497,6 +708,31 @@ nav .userNav button:hover {
   background: #cccccc;
 }
 
+/* CHART */
+.Chart {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    box-shadow: 0 33px 28px -36px #000;
+}
+.deviceChartLegend {
+    font-size: .8rem;
+    width: 95%;
+    margin: auto;
+}
+.deviceChartLegend .tags {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-left: 15px;
+}
+.deviceChartLegend .tags.UpperLevel { background: #0ea2f2;}
+.deviceChartLegend .tags.InterfaceLevel { background: #16f729;}
+.deviceChartLegend .tags.BottomLevel { background: #888888;}
+.deviceChartLegend .tags.TotalVolume { background: #ffb200;}
+.deviceChartLegend .tags.OilVolume { background: #3ec9ef;}
+.deviceChartLegend .tags.WaterVolume { background: #c9b00c;}
+.deviceChartLegend .tags.Temperature { background: #ff1900;}
 
 /* Media Queries */
 @media screen and (max-width: 500px) {
@@ -506,4 +742,11 @@ nav .userNav button:hover {
   }
   .popContainer {width: 65%;}
   .popContainer #chart {height: 85px;}
+}
+
+
+/* ANIMATIONS */
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
 }

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Callback extends Component {
 
     componentWillMount() {
-        this.props.history.replace('/home')
+        this.props.history.replace('/setup')
     }
 
     render() {

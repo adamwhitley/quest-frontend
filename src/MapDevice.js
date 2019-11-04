@@ -5,7 +5,7 @@ class MapDevice extends Component {
     return (
       <div className="MapDevice">
           <svg version="1.1" id="tank" x="0px" y="0px" className={this.props.props.state === 1 ? 'Online' : 'Offline'}
-               width="30px" height="30px" viewBox="0 0 91.026 90.801" onClick={() => this.props.pop(this.props.props)}>
+               width="30px" height="30px" viewBox="0 0 91.026 90.801" onClick={() => this.props.iconClick(this.props.props.objectId, JSON.parse(this.props.props.infoRaw).location.type.GPS.latitude, JSON.parse(this.props.props.infoRaw).location.type.GPS.longitude)}>
             <path d="M0,90.14c1.216-2.846,2.381-5.575,3.546-8.304
             c0.354-0.829,0.729-1.649,1.047-2.491c0.189-0.501,0.479-0.67,1.013-0.658c1.533,0.035,3.067,0.012,4.708,0.012
             c0-21.815,0-43.586,0-65.417c12.014,0,23.92,0,35.938,0c0,21.753,0,43.522,0,65.339c0.272,0.037,0.442,0.079,0.612,0.081

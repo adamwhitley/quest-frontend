@@ -10,11 +10,8 @@ class Map extends Component {
         super(props);
         this.state = {
             devices: this.props.data,
-            center: {
-                lat: 40.7484, // Center on Site coords
-                lng: -73.9845
-            },
-            zoom: 11,
+            center: this.props.center,
+            zoom: this.props.zoom,
             popItem: {},
             pop: false
         };
@@ -147,13 +144,18 @@ class Map extends Component {
           <GoogleMapReact
               bootstrapURLKeys={{ key: 'AIzaSyAuDagnocohBbjI35Cef4xNn28uSaDt7U0'}}
               defaultCenter={this.state.center}
+              center={this.props.center}
               defaultZoom={this.state.zoom}
+              zoom={this.props.zoom}
           >
           {
               this.state.devices.map((item, i) => <MapDevice
-                  lat={JSON.parse(item.infoRaw).location.type.GPS.latitude}
-                  lng={JSON.parse(item.infoRaw).location.type.GPS.longitude}
+                  // lat={JSON.parse(item.infoRaw).location.type.GPS.latitude}
+                  // lng={JSON.parse(item.infoRaw).location.type.GPS.longitude}
+                  lat={this.props.center.lat}
+                  lng={this.props.center.lng}
                   pop={this.getPop}
+                  iconClick={this.props.iconClick}
                   props={item}
                   key={i} />)
           }

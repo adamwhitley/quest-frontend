@@ -9,8 +9,8 @@ export default class Auth {
     auth0 = new auth0.WebAuth({
         domain: 'quest-automated.auth0.com',
         clientID: 'YAy4BE3v7ZcgRx3ymwf9f7Eexorlvdu9',
-        redirectUri: 'http://localhost:3000/callback',
-        // redirectUri: 'http://quest-frontend.s3-website-us-east-1.amazonaws.com/callback',
+        // redirectUri: 'http://localhost:3000/callback',
+        redirectUri: 'http://quest-frontend.s3-website-us-east-1.amazonaws.com/callback',
         responseType: 'token id_token',
         scope: 'openid'
     });
@@ -68,9 +68,9 @@ export default class Auth {
             if (authResult && authResult.accessToken && authResult.idToken) {
                 this.setSession(authResult);
             } else if (err) {
-                this.logout();
+                // this.logout();
                 console.log(err);
-                alert(`Could not get a new token (${err.error}: ${err.error_description}).`);
+                // alert(`Could not get a new token (${err.error}: ${err.error_description}).`);
             }
         });
     }
